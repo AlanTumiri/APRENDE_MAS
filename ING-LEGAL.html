@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Pro: Ingeniería Legal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ING-LEGAL.css">
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <div class="quiz-card">
+            <header id="header-ui">
+                <div class="top-info">
+                    <span>TUTOR PRO | INGENIERÍA LEGAL</span>
+                    <span id="q-counter">01/19</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-fill" id="bar"></div>
+                </div>
+            </header>
+
+            <main id="quiz-ui">
+                <div class="question-header">
+                    <h2 id="question">Cargando...</h2>
+                    <button class="btn-theory" onclick="showTheory()" title="Necesito un repaso (Tecla H)">💡</button>
+                </div>
+                
+                <div id="feedback-box" class="feedback-box hidden"></div>
+
+                <div id="choices-container" class="choices-stack"></div>
+                
+                <button id="btn-next" class="btn-next hidden" onclick="nextQuestion()">Entendido, Continuar (Enter) ➔</button>
+            </main>
+
+            <section id="result-ui" class="hidden">
+                <div class="results">
+                    <h2>¡Misión Cumplida! 🎓</h2>
+                    <p>Has completado el repaso con la técnica de repetición espaciada.</p>
+                    
+                    <div id="analysis-box" class="analysis-box">
+                        <h3>📊 Tu Resumen Analítico</h3>
+                        <p id="analysis-msg">Temas que debes repasar antes del examen:</p>
+                        <ul id="weak-topics-list"></ul>
+                    </div>
+
+                    <button class="btn-restart" onclick="initQuiz(true)">Iniciar nuevo repaso</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="keyboard-hints">
+        Atajos: [1, 2, 3] Elegir opción | [H] Pista | [Enter] Continuar
+    </div>
+
+    <script src="ING-LEGAL.js"></script>
+</body>
+</html>

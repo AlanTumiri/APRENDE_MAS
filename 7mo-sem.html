@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7mo Semestre | Ingeniería de Sistemas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="7mo-sem.css">
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="dashboard-container">
+        
+        <nav class="top-bar">
+            <button class="btn-back" onclick="location.href='estilos-inicio.html'">
+                <span>⬅</span> Volver al Inicio
+            </button>
+        </nav>
+
+        <header class="page-header">
+            <span class="badge">TU PLAN DE ESTUDIOS</span>
+            <h1>7mo Semestre</h1>
+            <p class="subtitle">Selecciona la materia que deseas estudiar hoy y continúa tu progreso.</p>
+        </header>
+
+        <main class="grid-semestres">
+            
+            <article class="glass-card highlight" onclick="location.href='ING-LEGAL.html'">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Ingeniería Legal y Ética</h3>
+                        <span class="status open">🔓</span>
+                    </div>
+                    <p class="card-description">Estudio de normas éticas, deontología profesional, ordenamiento legal, propiedad intelectual y delitos informáticos.</p>
+                </div>
+                
+                <div class="card-footer">
+                    <div class="progress-info">
+                        <span class="progress-text">Tu progreso:</span>
+                        <div class="mini-progress"><div class="mini-fill" style="width: 0%;" id="barra-progreso-materia"></div></div>
+                    </div>
+                    <button class="btn-primary">Ingresar al Cuestionario</button>
+                </div>
+            </article>
+
+            <article class="glass-card locked">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Auditoría de Sistemas</h3>
+                        <span class="status closed">🔒</span>
+                    </div>
+                    <p class="card-description">Estamos preparando los cuestionarios y el material de repaso interactivo para esta materia.</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn-disabled" disabled>Muy pronto...</button>
+                </div>
+            </article>
+
+            <article class="glass-card locked">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Preparación de Proyectos</h3>
+                        <span class="status closed">🔒</span>
+                    </div>
+                    <p class="card-description">Estamos preparando los cuestionarios y el material de repaso interactivo para esta materia.</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn-disabled" disabled>Muy pronto...</button>
+                </div>
+            </article>
+
+        </main>
+
+    </div>
+
+    <script src="7mo-semestre.js"></script>
+</body>
+</html>

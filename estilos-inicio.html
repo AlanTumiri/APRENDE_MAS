@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar Semestre | Ingeniería de Sistemas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos-inicio.css">
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="dashboard-container">
+        
+        <header class="top-nav">
+            <div>
+                <h1>Ingeniería de Sistemas</h1>
+                <p class="subtitle">Plan de Estudios Oficial</p>
+            </div>
+            <div class="search-box">
+                <span>🔍</span>
+                <input type="text" id="buscador" placeholder="Buscar materia (ej. Cálculo, Legal)..." onkeyup="filtrarMaterias()">
+            </div>
+        </header>
+
+        <section class="continue-section">
+            <h2>⏱️ Continuar Estudiando</h2>
+            <div class="glass-card active-course" onclick="location.href='ING-LEGAL.html'" tabindex="0" role="button" aria-label="Continuar Ingeniería Legal">
+                <div class="course-info">
+                    <span class="badge">Séptimo Semestre</span>
+                    <h3>Ingeniería Legal y Ética</h3>
+                    <p>Último tema visto: Delitos Informáticos</p>
+                </div>
+                <div class="progress-module">
+                    <div class="progress-text">
+                        <span id="progreso-texto">0% Completado</span>
+                        <span>🏆</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="barra-legal"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-section">
+            <h2>🔥 Tendencias esta semana (Exámenes cerca)</h2>
+            <div class="tags-container" id="tags-filtros">
+                <span class="tag">Bases de Datos II</span>
+                <span class="tag">Arquitectura de Software</span>
+                <span class="tag">Ingeniería Legal</span>
+                <span class="tag">Cálculo III</span>
+            </div>
+        </section>
+
+        <section class="semesters-section">
+            <h2>📚 Seleccionar Semestre</h2>
+            
+<div class="grid-semestres" id="grid-semestres">
+                
+                <div class="glass-card semester-card" data-materias="calculo i algebra lineal fisica i introduccion a la programacion">
+                    <div class="card-header">
+                        <h3>1er Semestre</h3>
+                        <span class="status open">🔓</span>
+                    </div>
+                    <p>Cálculo I, Álgebra Lineal, Física I, Intro. a la Programación.</p>
+                    <button class="btn-outline">Ver materias</button>
+                </div>
+
+                <div class="glass-card semester-card" data-materias="calculo ii estructuras discretas fisica ii programacion orientada a objetos">
+                    <div class="card-header">
+                        <h3>2do Semestre</h3>
+                        <span class="status open">🔓</span>
+                    </div>
+                    <p>Cálculo II, Estructuras Discretas, Física II, Programación Orientada a Objetos.</p>
+                    <button class="btn-outline">Ver materias</button>
+                </div>
+
+                <div class="glass-card semester-card" data-materias="ecuaciones diferenciales estadistica i estructura de datos arquitectura de computadoras">
+                    <div class="card-header">
+                        <h3>3er Semestre</h3>
+                        <span class="status open">🔓</span>
+                    </div>
+                    <p>Ecuaciones Diferenciales, Estadística I, Estructura de Datos, Arquitectura de Computadoras.</p>
+                    <button class="btn-outline">Ver materias</button>
+                </div>
+
+                <div class="glass-card semester-card" data-materias="investigacion de operaciones base de datos i sistemas operativos i analisis y diseño">
+                    <div class="card-header">
+                        <h3>4to Semestre</h3>
+                        <span class="status open">🔓</span>
+                    </div>
+                    <p>Investigación de Operaciones I, Base de Datos I, Sistemas Operativos I, Análisis y Diseño.</p>
+                    <button class="btn-outline">Ver materias</button>
+                </div>
+
+                <div class="glass-card semester-card" data-materias="base de datos ii redes de computadoras i sistemas operativos ii ingenieria de software i">
+                    <div class="card-header">
+                        <h3>5to Semestre</h3>
+                        <span class="status open">🔓</span>
+                    </div>
+                    <p>Base de Datos II, Redes I, Sistemas Operativos II, Ingeniería de Software I.</p>
+                    <button class="btn-outline">Ver materias</button>
+                </div>
+
+                <div class="glass-card semester-card" data-materias="redes de computadoras ii inteligencia artificial ingenieria de software ii sistemas de informacion geografica">
+                    <div class="card-header">
+                        <h3>6to Semestre</h3>
+                        <span class="status open">🔓</span>
+                    </div>
+                    <p>Redes II, Inteligencia Artificial, Ingeniería de Software II, Sistemas de Información.</p>
+                    <button class="btn-outline">Ver materias</button>
+                </div>
+
+                <div class="glass-card semester-card highlight" data-materias="legal etica deontologia auditoria de sistemas" onclick="location.href='7mo-sem.html'" tabindex="0" role="button">
+                    <div class="card-header">
+                        <h3>7mo Semestre</h3>
+                        <span class="status open">🔓</span>
+                    </div>
+                    <p><strong>Ingeniería Legal, Ética y Deontología</strong>, Auditoría de Sistemas, Gestión.</p>
+                    <div class="mini-progress"><div class="mini-fill" style="width: 40%;"></div></div>
+                    <button class="btn-primary">Abrir</button>
+                </div>
+
+                <div class="glass-card semester-card" data-materias="preparacion y evaluacion de proyectos seguridad informatica sistemas expertos">
+                    <div class="card-header">
+                        <h3>8vo Semestre</h3>
+                        <span class="status open">🔓</span>
+                    </div>
+                    <p>Preparación de Proyectos, Seguridad Informática, Sistemas Expertos.</p>
+                    <button class="btn-outline">Ver materias</button>
+                </div>
+
+                <div class="glass-card semester-card locked" data-materias="taller de grado i gestion de calidad de software">
+                    <div class="card-header">
+                        <h3>9no Semestre</h3>
+                        <span class="status closed">🔒</span>
+                    </div>
+                    <p>Taller de Grado I, Gestión de Calidad de Software.</p>
+                    <button class="btn-disabled" disabled>Aprueba el 8vo primero</button>
+                </div>
+
+                <div class="glass-card semester-card locked" data-materias="taller de grado ii tesis proyecto de grado practica empresarial">
+                    <div class="card-header">
+                        <h3>10mo Semestre</h3>
+                        <span class="status closed">🔒</span>
+                    </div>
+                    <p>Taller de Grado II (Tesis/Proyecto), Práctica Empresarial.</p>
+                    <button class="btn-disabled" disabled>Aprueba el 9no primero</button>
+                </div>
+
+            </div>
+
+            </div>
+            
+            <p id="mensaje-error" style="display: none; text-align: center; color: #94a3b8; margin-top: 30px; font-weight: 500;">
+                No se encontraron materias con esa búsqueda. 😕
+            </p>
+        </section>
+
+    </div>
+
+    <script src="estilos-inicio.js"></script>
+</body>
+</html>
