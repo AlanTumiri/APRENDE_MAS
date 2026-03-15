@@ -1,3 +1,4 @@
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -106,8 +107,92 @@ h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: #e2e8f0; }
     h1 { font-size: 1.8rem; }
 }
 
-/* --- NUEVO: Estilos de accesibilidad para teclado --- */
+/* --- Accesibilidad para teclado --- */
 .active-course:focus, .highlight:focus {
     outline: 2px solid var(--success);
     outline-offset: 4px;
+}
+
+/* ========================================= */
+/* ESTILOS DEL MENÚ DE NAVEGACIÓN (NAVBAR)   */
+/* ========================================= */
+.glass-navbar {
+    position: fixed; /* Se queda pegado arriba */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000; /* Para que siempre esté por encima de todo */
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.icon-logo { font-size: 1.5rem; }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-item {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: var(--primary); /* Se pinta de morado al pasar el mouse */
+}
+
+/* Botón sutil de Cerrar Sesión */
+.btn-logout {
+    background: transparent;
+    border: 1px solid rgba(239, 68, 68, 0.4); /* Rojo sutil */
+    color: #ef4444;
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+.btn-logout:hover {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: #ef4444;
+    transform: translateY(-2px);
+}
+
+/* Responsividad para celulares */
+@media (max-width: 600px) {
+    .glass-navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .nav-item { font-size: 0.85rem; }
+    .btn-logout { padding: 6px 12px; font-size: 0.85rem; }
 }
