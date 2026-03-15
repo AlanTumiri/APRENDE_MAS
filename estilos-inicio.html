@@ -13,7 +13,19 @@
 
     <div class="bg-glow"></div>
 
-    <div class="dashboard-container">
+    <nav class="glass-navbar">
+        <div class="nav-logo">
+            <span class="icon-logo">💻</span>
+            <span class="logo-text">IngSistemas</span>
+        </div>
+        <div class="nav-links">
+            <a href="estilos-inicio.html" class="nav-item active">Mis Materias</a>
+            <a href="#" class="nav-item">Mi Perfil</a>
+            <button onclick="cerrarSesion()" class="btn-logout">Cerrar Sesión</button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container" style="padding-top: 80px;">
         
         <header class="top-nav">
             <div>
@@ -59,7 +71,7 @@
         <section class="semesters-section">
             <h2>📚 Seleccionar Semestre</h2>
             
-<div class="grid-semestres" id="grid-semestres">
+            <div class="grid-semestres" id="grid-semestres">
                 
                 <div class="glass-card semester-card" data-materias="calculo i algebra lineal fisica i introduccion a la programacion">
                     <div class="card-header">
@@ -151,8 +163,6 @@
                     <p>Taller de Grado II (Tesis/Proyecto), Práctica Empresarial.</p>
                     <button class="btn-disabled" disabled>Aprueba el 9no primero</button>
                 </div>
-
-            </div>
 
             </div>
             
