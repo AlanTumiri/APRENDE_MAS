@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="inicio.css">
 </head>
 <body>
@@ -28,9 +27,32 @@
         </div>
     </main>
 
-    <button class="btn-floating" onclick="abrirComentario()">
+    <button class="btn-floating" id="btn-abrir-modal">
         <span class="icon">💬</span> Déjanos tu comentario
     </button>
+
+    <div class="modal-overlay" id="modal-comentario">
+        <div class="glass-card modal-content">
+            <button class="btn-close" id="btn-cerrar-modal">&times;</button>
+            
+            <h2>¡Nos encantaría escucharte!</h2>
+            <p class="modal-subtitle">Tu opinión nos ayuda a mejorar la plataforma para todos.</p>
+            
+            <form id="form-comentario">
+                <div class="input-group">
+                    <label for="nombre">Tu Nombre (Opcional)</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Alan Tumiri">
+                </div>
+                
+                <div class="input-group">
+                    <label for="mensaje">Tu Comentario</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí tus sugerencias o felicitaciones..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary full-width">Enviar Comentario</button>
+            </form>
+        </div>
+    </div>
 
     <script src="inicio.js"></script>
 </body>
