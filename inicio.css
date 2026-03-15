@@ -6,6 +6,8 @@
     --success: #10b981;
     --glass-bg: rgba(30, 41, 59, 0.6);
     --text: #f8fafc;
+    /* Nuevo color para inputs */
+    --input-bg: rgba(255, 255, 255, 0.05);
 }
 
 body {
@@ -70,7 +72,7 @@ body {
     margin-bottom: 20px;
     background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
     -webkit-background-clip: text;
-    background-clip: text; /* Corrección de tu aviso en CSS */
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -1px;
 }
@@ -140,11 +142,129 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsividad para celulares */
+/* Responsividad básica para el hero */
 @media (max-width: 600px) {
     .glass-panel { padding: 40px 20px; }
     .hero-title { font-size: 2.8rem; }
     .hero-subtitle { font-size: 1rem; }
     .btn-main { padding: 16px 30px; width: 100%; }
     .btn-floating { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 0.85rem; }
+}
+
+/* ========================================= */
+/* NUEVO: Estilos del Modal (Popup) */
+/* ========================================= */
+
+/* Fondo oscuro detrás del modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Oscurece la pantalla */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Oculto por defecto */
+    visibility: hidden;
+    transition: all 0.4s ease;
+    padding: 20px;
+}
+
+/* Clase que JS activará para mostrar el modal */
+.modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tarjeta de Cristal del Modal */
+.modal-content {
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px); /* Más desenfoque para resaltar */
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    transform: scale(0.8) translateY(20px); /* Animación de entrada */
+    transition: transform 0.4s ease;
+}
+
+.modal-overlay.open .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+/* Botón de cerrar (X) */
+.btn-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.btn-close:hover { color: #f8fafc; }
+
+.modal-content h2 { font-size: 1.8rem; margin-bottom: 10px; font-weight: 800; }
+.modal-subtitle { color: #cbd5e1; margin-bottom: 30px; font-size: 0.95rem; }
+
+/* Estilos para el Formulario dentro del Modal */
+.input-group { margin-bottom: 20px; text-align: left; }
+.input-group label { display: block; font-size: 0.85rem; color: #94a3b8; margin-bottom: 8px; font-weight: 500; }
+
+/* Estilo unificado para inputs y textarea (como en el login) */
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    background: var(--input-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 14px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Botón de enviar dentro del modal */
+.btn-primary {
+    background: var(--primary);
+    border: none;
+    color: white;
+    padding: 16px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(99, 102, 241, 0.5);
+}
+
+.full-width { width: 100%; }
+
+/* Responsividad para el modal en celulares */
+@media (max-width: 500px) {
+    .modal-content { padding: 30px 20px; }
+    .modal-content h2 { font-size: 1.5rem; }
 }
