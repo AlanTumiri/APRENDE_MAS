@@ -7,9 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // 1. LEER EL PROGRESO DEL CUESTIONARIO
 function cargarProgreso() {
     const progresoGuardado = localStorage.getItem('ingenieria_legal_progreso');
-    
-    // MEJORA: Lee el total de preguntas dinámicamente si existe, si no, usa 19 por defecto.
-    // Esto es ideal para tu app de cuestionarios guiados.
     const totalPreguntas = parseInt(localStorage.getItem('ingenieria_legal_total')) || 19; 
     
     let porcentaje = 0;
@@ -50,7 +47,7 @@ function filtrarMaterias() {
         }
     });
 
-    // MEJORA: Mostrar mensaje si no hay resultados
+    // Mostrar mensaje si no hay resultados
     let mensajeError = document.getElementById('mensaje-error');
     if (hayResultados) {
         mensajeError.style.display = "none";
@@ -59,7 +56,7 @@ function filtrarMaterias() {
     }
 }
 
-// 3. MEJORA: HACER QUE LOS TAGS FUNCIONEN COMO FILTROS
+// 3. HACER QUE LOS TAGS FUNCIONEN COMO FILTROS
 function inicializarTags() {
     let tags = document.querySelectorAll('.tag');
     let buscador = document.getElementById('buscador');
@@ -71,7 +68,7 @@ function inicializarTags() {
             // Ejecuta la función de filtrado
             filtrarMaterias();
             
-            // Opcional: Pequeña animación visual en el buscador para indicar acción
+            // Animación visual en el buscador para indicar acción
             buscador.parentElement.style.transform = "scale(1.02)";
             setTimeout(() => {
                 buscador.parentElement.style.transform = "scale(1)";
@@ -80,8 +77,7 @@ function inicializarTags() {
     });
 }
 
-// 4. MEJORA: ACCESIBILIDAD PARA TECLADO
-// Permite que un usuario navegue con la tecla 'Tab' y use 'Enter' para abrir las tarjetas
+// 4. ACCESIBILIDAD PARA TECLADO
 function accesibilidadTeclado() {
     document.querySelectorAll('[tabindex="0"]').forEach(elemento => {
         elemento.addEventListener('keydown', (e) => {
@@ -90,4 +86,16 @@ function accesibilidadTeclado() {
             }
         });
     });
+}
+
+// =========================================
+// 5. NUEVO: Función para el Navbar (Cerrar Sesión)
+// =========================================
+function cerrarSesion() {
+    let confirmar = confirm("¿Estás seguro de que quieres cerrar tu sesión?");
+    
+    if (confirmar) {
+        // Asumiendo que index.html es tu página de bienvenida/login original
+        window.location.href = 'index.html'; 
+    }
 }
